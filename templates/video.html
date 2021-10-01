@@ -1,0 +1,54 @@
+{% extends 'layout.html'%} {% block css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/video.css')}}"
+/>{% endblock %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="window-video">
+        <video
+          width="720"
+          height="480"
+          controls
+          style="background-color: black;"
+        >
+          <source
+            src="{{ url_for('static', filename='./anime/High School Of The Dead/01.mp4')}}"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 cap-list">
+      {% for card in cards %}
+
+        <a href="#">
+          <div class="card mb-3">
+            <div class="row no-gutters">
+
+              <div class="col-md-4">
+                <img src="{{ card['img'] }}" class="card-img" alt="..." />
+              </div>
+
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ card['title'] }}</h5>
+                  <p>{{ card['description']}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </a>
+
+      {% endfor %}
+    </div>
+    
+
+  </div>
+</div>
+{% endblock %}

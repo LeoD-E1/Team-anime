@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Team Anime | Login</title>
+</head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename='css/login.css')}}">
+<body>
+	<div class="bg-img"></div>
+	<div class="login-box">
+
+		<a href="{{ url_for('home')}}"><img class="avatar" src="{{url_for('static', filename='img/esfera.png')}}" alt="logo de esfera"></a>
+		<h1>Login</h1>
+
+		<form action="{{ url_for('login')}}" method="post" novalidate>
+			{{ form.hidden_tag() }}
+			<label for="UserName">UserName</label>
+			{{ form.username }}
+			<label for="Passord">Password</label>
+			{{ form.password }}
+			{{form.submit}}
+
+		    <a href="#">¿Olvido su Contraseña?</a><br>
+		    <a href="{{ url_for('signup')}}">Registrarse</a>
+		</form>
+		
+	</div>
+
+</body>
+</html>

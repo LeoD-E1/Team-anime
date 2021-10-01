@@ -1,0 +1,8 @@
+.container-video{
+    padding-top: 30px;
+}
+
+video{
+    width: 100%;
+    height: auto;
+}

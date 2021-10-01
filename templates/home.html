@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block content %} {% include
+'components/slider.html' %}
+<div class="main pt-3">
+  <div class="container">
+    <div class="row">
+      {% for card in cards %}
+      <div class="card text-center m-2" style="width: 12.5rem">
+        <a href="{{ card['url']}}"
+          ><img
+            src="{{url_for('static', filename=card['img']) }}"
+            class="card-img-top"
+        /></a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}
